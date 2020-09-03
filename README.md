@@ -51,7 +51,7 @@ Example: ```-lowPassHalfLifeSeconds=15 -averageOnlyCurrent```
 
 Another task is to count 'swap tendency' metric, as it is described here https://access.redhat.com/solutions/103833
 
-The actual problem is that 'swappines' is a standard system param, 'mapped ratio' can be counted from 'nr_mapped' system metric, but the 'distress' value is inaccessible from the kernel internals for user-space software, so this method, unfortunately, is unusable in production.
+The actual problem is that 'swappines' is a standard system param, 'mapped ratio' can be counted from 'nr_mapped' system metric, but the 'distress' value is inaccessible from the kernel internals for user-space software. So this method, unfortunately, is unusable in production, and that's why it is disabled by default. You can enable it with ```-showTendency``` option.
 
 Metrics:
 ```swp_tend``` - 'swap tendency' metric counted as described above.
